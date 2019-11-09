@@ -8,24 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		6F4F71982368B0B30056DAE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4F71972368B0B30056DAE8 /* AppDelegate.swift */; };
-		6F4F719A2368B0B30056DAE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4F71992368B0B30056DAE8 /* SceneDelegate.swift */; };
 		6F4F719C2368B0B30056DAE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4F719B2368B0B30056DAE8 /* ViewController.swift */; };
 		6F4F719F2368B0B30056DAE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F719D2368B0B30056DAE8 /* Main.storyboard */; };
 		6F4F71A22368B0B30056DAE8 /* Comist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F4F71A02368B0B30056DAE8 /* Comist.xcdatamodeld */; };
 		6F4F71A42368B0B90056DAE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F71A32368B0B90056DAE8 /* Assets.xcassets */; };
 		6F4F71A72368B0B90056DAE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F71A52368B0B90056DAE8 /* LaunchScreen.storyboard */; };
+		6F4F71B42368BB060056DAE8 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F71B02368BB060056DAE8 /* Comfortaa-Bold.ttf */; };
+		6F4F71B52368BB060056DAE8 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F71B12368BB060056DAE8 /* Comfortaa-Regular.ttf */; };
+		6F4F71B62368BB060056DAE8 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F71B22368BB060056DAE8 /* Comfortaa-Light.ttf */; };
+		6F4F71B72368BB060056DAE8 /* Comfortaa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F71B32368BB060056DAE8 /* Comfortaa-Medium.ttf */; };
+		6F4F71BA2368C8510056DAE8 /* CreateTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4F71B92368C8510056DAE8 /* CreateTaskView.swift */; };
+		6F4F71BC2368C85E0056DAE8 /* CreateTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F71BB2368C85E0056DAE8 /* CreateTaskView.xib */; };
+		6F4F71BF2369B4440056DAE8 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4F71BE2369B4440056DAE8 /* UIViewExtension.swift */; };
+		6F7233782376E89400669235 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7233772376E89400669235 /* TaskModel.swift */; };
+		6F72337A2376E8A400669235 /* ArgumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7233792376E8A400669235 /* ArgumentModel.swift */; };
+		6F8CC75123747B6D00D7560E /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8CC74F23747B6C00D7560E /* TaskVC.swift */; };
+		6F8CC75223747B6D00D7560E /* TaskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8CC75023747B6C00D7560E /* TaskVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6F4F71942368B0B30056DAE8 /* Comist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F4F71972368B0B30056DAE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F4F71992368B0B30056DAE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6F4F719B2368B0B30056DAE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6F4F719E2368B0B30056DAE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F4F71A12368B0B30056DAE8 /* Comist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Comist.xcdatamodel; sourceTree = "<group>"; };
 		6F4F71A32368B0B90056DAE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F4F71A62368B0B90056DAE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F4F71A82368B0B90056DAE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F4F71B02368BB060056DAE8 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		6F4F71B12368BB060056DAE8 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
+		6F4F71B22368BB060056DAE8 /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
+		6F4F71B32368BB060056DAE8 /* Comfortaa-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Medium.ttf"; sourceTree = "<group>"; };
+		6F4F71B92368C8510056DAE8 /* CreateTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskView.swift; sourceTree = "<group>"; };
+		6F4F71BB2368C85E0056DAE8 /* CreateTaskView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTaskView.xib; sourceTree = "<group>"; };
+		6F4F71BE2369B4440056DAE8 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		6F7233772376E89400669235 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		6F7233792376E8A400669235 /* ArgumentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentModel.swift; sourceTree = "<group>"; };
+		6F8CC74F23747B6C00D7560E /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
+		6F8CC75023747B6C00D7560E /* TaskVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +78,74 @@
 		6F4F71962368B0B30056DAE8 /* Comist */ = {
 			isa = PBXGroup;
 			children = (
-				6F4F71972368B0B30056DAE8 /* AppDelegate.swift */,
-				6F4F71992368B0B30056DAE8 /* SceneDelegate.swift */,
-				6F4F719B2368B0B30056DAE8 /* ViewController.swift */,
-				6F4F719D2368B0B30056DAE8 /* Main.storyboard */,
+				6F72337B2376EAD100669235 /* TaskList */,
+				6F7233762376E82500669235 /* Model */,
+				6F4F71BD2369B4220056DAE8 /* Extension */,
+				6F4F71B82368C7F50056DAE8 /* UI */,
+				6F4F71AE2368BA670056DAE8 /* Support */,
+				6F4F71A02368B0B30056DAE8 /* Comist.xcdatamodeld */,
+				6F8CC74F23747B6C00D7560E /* TaskVC.swift */,
+				6F8CC75023747B6C00D7560E /* TaskVC.xib */,
+			);
+			path = Comist;
+			sourceTree = "<group>";
+		};
+		6F4F71AE2368BA670056DAE8 /* Support */ = {
+			isa = PBXGroup;
+			children = (
 				6F4F71A32368B0B90056DAE8 /* Assets.xcassets */,
 				6F4F71A52368B0B90056DAE8 /* LaunchScreen.storyboard */,
 				6F4F71A82368B0B90056DAE8 /* Info.plist */,
-				6F4F71A02368B0B30056DAE8 /* Comist.xcdatamodeld */,
+				6F4F71972368B0B30056DAE8 /* AppDelegate.swift */,
+				6F4F71AF2368BA770056DAE8 /* Font */,
 			);
-			path = Comist;
+			path = Support;
+			sourceTree = "<group>";
+		};
+		6F4F71AF2368BA770056DAE8 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				6F4F71B02368BB060056DAE8 /* Comfortaa-Bold.ttf */,
+				6F4F71B22368BB060056DAE8 /* Comfortaa-Light.ttf */,
+				6F4F71B32368BB060056DAE8 /* Comfortaa-Medium.ttf */,
+				6F4F71B12368BB060056DAE8 /* Comfortaa-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		6F4F71B82368C7F50056DAE8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6F4F71B92368C8510056DAE8 /* CreateTaskView.swift */,
+				6F4F71BB2368C85E0056DAE8 /* CreateTaskView.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6F4F71BD2369B4220056DAE8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6F4F71BE2369B4440056DAE8 /* UIViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6F7233762376E82500669235 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F7233772376E89400669235 /* TaskModel.swift */,
+				6F7233792376E8A400669235 /* ArgumentModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6F72337B2376EAD100669235 /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				6F4F719D2368B0B30056DAE8 /* Main.storyboard */,
+				6F4F719B2368B0B30056DAE8 /* ViewController.swift */,
+			);
+			path = TaskList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,8 +206,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F4F71B42368BB060056DAE8 /* Comfortaa-Bold.ttf in Resources */,
 				6F4F71A72368B0B90056DAE8 /* LaunchScreen.storyboard in Resources */,
+				6F4F71B72368BB060056DAE8 /* Comfortaa-Medium.ttf in Resources */,
 				6F4F71A42368B0B90056DAE8 /* Assets.xcassets in Resources */,
+				6F4F71B52368BB060056DAE8 /* Comfortaa-Regular.ttf in Resources */,
+				6F4F71BC2368C85E0056DAE8 /* CreateTaskView.xib in Resources */,
+				6F4F71B62368BB060056DAE8 /* Comfortaa-Light.ttf in Resources */,
+				6F8CC75223747B6D00D7560E /* TaskVC.xib in Resources */,
 				6F4F719F2368B0B30056DAE8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,10 +225,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F4F71BF2369B4440056DAE8 /* UIViewExtension.swift in Sources */,
 				6F4F719C2368B0B30056DAE8 /* ViewController.swift in Sources */,
+				6F72337A2376E8A400669235 /* ArgumentModel.swift in Sources */,
+				6F4F71BA2368C8510056DAE8 /* CreateTaskView.swift in Sources */,
+				6F8CC75123747B6D00D7560E /* TaskVC.swift in Sources */,
 				6F4F71982368B0B30056DAE8 /* AppDelegate.swift in Sources */,
 				6F4F71A22368B0B30056DAE8 /* Comist.xcdatamodeld in Sources */,
-				6F4F719A2368B0B30056DAE8 /* SceneDelegate.swift in Sources */,
+				6F7233782376E89400669235 /* TaskModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +378,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y7693M9CNF;
-				INFOPLIST_FILE = Comist/Info.plist;
+				INFOPLIST_FILE = Comist/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,7 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lilcappucc.Comist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +397,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y7693M9CNF;
-				INFOPLIST_FILE = Comist/Info.plist;
+				INFOPLIST_FILE = Comist/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lilcappucc.Comist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

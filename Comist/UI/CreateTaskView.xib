@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Medium.ttf">
+            <string>Comfortaa-Medium</string>
+        </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CreateTaskView" customModule="Comist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIP-z7-Mo6">
+                    <rect key="frame" x="0.0" y="627.33333333333337" width="414" height="268.66666666666663"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T17-ow-3F7">
+                            <rect key="frame" x="16" y="24" width="334" height="17"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Medium" family="Comfortaa" pointSize="15"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enter title here." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9Y-yG-aRm">
+                            <rect key="frame" x="16" y="49" width="382" height="24"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Medium" family="Comfortaa" pointSize="20"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="inputtigTaskTitle:" destination="iN0-l3-epB" eventType="editingDidBegin" id="fzV-Fy-RXj"/>
+                            </connections>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd3-72-bYF">
+                            <rect key="frame" x="16" y="89" width="382" height="17"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="15"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="enter description here." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lAd-RS-ZoK">
+                            <rect key="frame" x="16" y="113.99999999999999" width="382" height="138.66666666666663"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Medium" family="Comfortaa" pointSize="20"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEf-Nr-DpI">
+                            <rect key="frame" x="366" y="24" width="24" height="24"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="dkb-G3-5kX"/>
+                                <constraint firstAttribute="height" constant="24" id="mcZ-s9-Y0j"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="done_ic"/>
+                            <connections>
+                                <action selector="pressedCreatingTaskButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="oBx-kD-Fga"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="p9Y-yG-aRm" secondAttribute="trailing" constant="16" id="0pv-WK-692"/>
+                        <constraint firstItem="T17-ow-3F7" firstAttribute="top" secondItem="fIP-z7-Mo6" secondAttribute="top" constant="24" id="Cp3-ej-enH"/>
+                        <constraint firstItem="p9Y-yG-aRm" firstAttribute="top" secondItem="T17-ow-3F7" secondAttribute="bottom" constant="8" id="QUt-9c-zhL"/>
+                        <constraint firstItem="p9Y-yG-aRm" firstAttribute="leading" secondItem="fIP-z7-Mo6" secondAttribute="leading" constant="16" id="QZY-Oq-dFp"/>
+                        <constraint firstAttribute="trailing" secondItem="KEf-Nr-DpI" secondAttribute="trailing" constant="24" id="SdG-aR-AJo"/>
+                        <constraint firstAttribute="bottom" secondItem="lAd-RS-ZoK" secondAttribute="bottom" constant="16" id="Vfs-hG-4Jo"/>
+                        <constraint firstItem="KEf-Nr-DpI" firstAttribute="leading" secondItem="T17-ow-3F7" secondAttribute="trailing" constant="16" id="Y5o-ae-jed"/>
+                        <constraint firstItem="T17-ow-3F7" firstAttribute="leading" secondItem="fIP-z7-Mo6" secondAttribute="leading" constant="16" id="Zk3-vZ-tXm"/>
+                        <constraint firstItem="lAd-RS-ZoK" firstAttribute="top" secondItem="Xd3-72-bYF" secondAttribute="bottom" constant="8" id="awv-sU-UHx"/>
+                        <constraint firstItem="Xd3-72-bYF" firstAttribute="top" secondItem="p9Y-yG-aRm" secondAttribute="bottom" constant="16" id="cLd-AY-Yw2"/>
+                        <constraint firstAttribute="trailing" secondItem="lAd-RS-ZoK" secondAttribute="trailing" constant="16" id="kiv-6f-7Mv"/>
+                        <constraint firstItem="Xd3-72-bYF" firstAttribute="leading" secondItem="fIP-z7-Mo6" secondAttribute="leading" constant="16" id="mdp-Pl-yGM"/>
+                        <constraint firstItem="lAd-RS-ZoK" firstAttribute="leading" secondItem="fIP-z7-Mo6" secondAttribute="leading" constant="16" id="qd7-6b-wyd"/>
+                        <constraint firstItem="KEf-Nr-DpI" firstAttribute="top" secondItem="fIP-z7-Mo6" secondAttribute="top" constant="24" id="wol-4n-hVV"/>
+                        <constraint firstAttribute="trailing" secondItem="Xd3-72-bYF" secondAttribute="trailing" constant="16" id="yZf-SV-M5M"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIb-kP-Bcv">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the title =)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86o-xW-D6h">
+                            <rect key="frame" x="0.0" y="67.666666666666671" width="414" height="22.333333333333329"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Medium" family="Comfortaa" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.67252934639999995" green="0.081206921279999997" blue="0.081846385019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.67252934644670048" green="0.081206921279213626" blue="0.081846385022602164" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="86o-xW-D6h" firstAttribute="leading" secondItem="YIb-kP-Bcv" secondAttribute="leading" id="80e-un-JM6"/>
+                        <constraint firstAttribute="trailing" secondItem="86o-xW-D6h" secondAttribute="trailing" id="Gag-40-5NK"/>
+                        <constraint firstAttribute="height" constant="120" id="ZR3-FZ-aRJ"/>
+                        <constraint firstAttribute="bottom" secondItem="86o-xW-D6h" secondAttribute="bottom" constant="30" id="wCL-AB-K1w"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fIP-z7-Mo6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5EA-tC-uuj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YIb-kP-Bcv" secondAttribute="trailing" id="AFy-wW-qWb"/>
+                <constraint firstItem="fIP-z7-Mo6" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.3" id="Fd6-Bo-brQ"/>
+                <constraint firstItem="YIb-kP-Bcv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HjL-4y-nFS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fIP-z7-Mo6" secondAttribute="trailing" id="Smg-u7-fuw"/>
+                <constraint firstAttribute="bottom" secondItem="fIP-z7-Mo6" secondAttribute="bottom" id="vIC-m2-Pj9"/>
+                <constraint firstItem="YIb-kP-Bcv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="x5g-cA-7fG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="createTaskButton" destination="KEf-Nr-DpI" id="Bf4-ex-MfW"/>
+                <outlet property="descriptionTextView" destination="lAd-RS-ZoK" id="bCm-mL-X1p"/>
+                <outlet property="errorView" destination="YIb-kP-Bcv" id="5Wh-Gi-GF6"/>
+                <outlet property="taskView" destination="fIP-z7-Mo6" id="WcN-6Z-Tli"/>
+                <outlet property="titleLable" destination="p9Y-yG-aRm" id="nbH-LX-g1y"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="144.64285714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="done_ic" width="553" height="553"/>
+    </resources>
+</document>
