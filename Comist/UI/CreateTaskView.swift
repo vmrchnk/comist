@@ -10,7 +10,7 @@ import UIKit
 
 class CreateTaskView: UIView {
     
-    var taskCreated: (() -> Void)?
+    var taskCreated: ((String, String) -> Void)?
     
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var taskView: UIView!
@@ -40,7 +40,7 @@ class CreateTaskView: UIView {
         super.init(coder: coder)
         registrateNotificationCenterObserver()
         
-    }
+}
     
     private func registrateNotificationCenterObserver(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(closeView(_:)))
@@ -65,52 +65,55 @@ class CreateTaskView: UIView {
         errorView.isHidden  = false
         errorView.frame = CGRect(x: 0, y: -self.errorView.frame.height, width: self.errorView.frame.width, height: self.errorView.frame.height)
         if titleLable.text == "" || titleLable.text  == defaultTitle {
-            startAnimation(for: errorView, relativeTo: 0)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-                guard let self = self else { return }
-                self.startAnimation(for: self.errorView, relativeTo: -self.errorView.frame.height, completion: {_ in self.errorView.isHidden = true})
-            }
-        }
-        else {
-            taskCreated?.self()}
+            validateBeforeCreating()
+        } else {
+            taskCreated?.self(titleLable.text!, descriptionTextView.text)}
         
     }
     
-    @objc func keyBoardWillShow(notification: NSNotification) {
-        guard !isKeyboardShowing else { return }
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            isKeyboardShowing = true
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            print(  self.taskView.frame.maxY)
-            startAnimation(for: taskView, relativeTo: self.taskView.frame.minY - keyboardHeight + 20)
+    private func validateBeforeCreating(){
+        startAnimation(for: errorView, relativeTo: 0)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let self = self else { return }
+            self.startAnimation(for: self.errorView, relativeTo: -self.errorView.frame.height, completion: {_ in self.errorView.isHidden = true})
         }
     }
-    
-    
-    private func startAnimation(for view: UIView, relativeTo y: CGFloat, completion: ((Bool) -> Void)? = nil){
-        UIView.animate(withDuration: animationDuration, animations: {
-            view.frame = CGRect(x: 0, y: y, width: view.frame.width, height: view.frame.height)
-        }, completion: completion)
-    }
-    
-    
-    private let defaultTitle = "enter title here."
-    @IBAction func inputtigTaskTitle(_ sender: UITextField) {
-        if sender.text == defaultTitle {
-            sender.text = ""
+        
+        @objc func keyBoardWillShow(notification: NSNotification) {
+            guard !isKeyboardShowing else { return }
+            if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                isKeyboardShowing = true
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                print(  self.taskView.frame.maxY)
+                startAnimation(for: taskView, relativeTo: self.taskView.frame.minY - keyboardHeight + 20)
+            }
         }
+        
+        
+        private func startAnimation(for view: UIView, relativeTo y: CGFloat, completion: ((Bool) -> Void)? = nil){
+            UIView.animate(withDuration: animationDuration, animations: {
+                view.frame = CGRect(x: 0, y: y, width: view.frame.width, height: view.frame.height)
+            }, completion: completion)
+        }
+        
+        
+        private let defaultTitle = "enter title here."
+        @IBAction func inputtigTaskTitle(_ sender: UITextField) {
+            if sender.text == defaultTitle {
+                sender.text = ""
+            }
+        }
+        
     }
     
-}
-
-
-extension CreateTaskView: UITextViewDelegate {
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.tintColor = .black
-        if textView.text == "enter description here." {
-            textView.text = ""
+    
+    extension CreateTaskView: UITextViewDelegate {
+        func textViewDidBeginEditing(_ textView: UITextView) {
+            textView.tintColor = .black
+            if textView.text == "enter description here." {
+                textView.text = ""
+            }
         }
-    }
 }
 

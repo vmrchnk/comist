@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19A602" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="ArgumentEntity" representedClassName="ArgumentEntity" syncable="YES">
-        <attribute name="text" optional="YES" attributeType="String"/>
-        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="value" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    <entity name="ArgumentEntity" representedClassName=".ArgumentEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="text" attributeType="String"/>
+        <attribute name="timestamp" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="value" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="taskEnity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskEntity" inverseName="argument" inverseEntity="TaskEntity"/>
     </entity>
-    <entity name="TaskEntity" representedClassName="TaskEntity" syncable="YES">
-        <attribute name="taskDescription" optional="YES" attributeType="String"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="argument" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArgumentEntity" inverseName="taskEnity" inverseEntity="ArgumentEntity"/>
+    <entity name="TaskEntity" representedClassName=".TaskEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="state" attributeType="Integer 16" usesScalarValueType="YES"/>
+        <attribute name="taskDescription" attributeType="String"/>
+        <attribute name="timestamp" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="argument" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArgumentEntity" inverseName="taskEnity" inverseEntity="ArgumentEntity"/>
     </entity>
     <elements>
-        <element name="ArgumentEntity" positionX="254.859375" positionY="-55.05859375" width="128" height="103"/>
-        <element name="TaskEntity" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="ArgumentEntity" positionX="254.859375" positionY="-55.05859375" width="128" height="118"/>
+        <element name="TaskEntity" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

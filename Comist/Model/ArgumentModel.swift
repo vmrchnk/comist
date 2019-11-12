@@ -8,15 +8,23 @@
 
 import Foundation
 
-struct ArgumentModel {
+struct ArgumentModel: Hashable {
+    let timestamp: Int64
     let text: String
     let value: ArgumentValue
     let type: ArgumentType
+    
+    
+    init(text: String, value: ArgumentValue, type: ArgumentType){
+        self.timestamp = Date().toMillis()
+        self.text = text
+        self.value = value
+        self.type = type
+    }
 }
 
 enum ArgumentType: Int {
-    case possitive
-    case negative
+    case none = 0, possitive, negative
 }
 
 enum ArgumentValue: Int {
