@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
         <array key="Comfortaa-Light.ttf">
             <string>Comfortaa-Light</string>
         </array>
@@ -32,6 +35,31 @@
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYK-QB-KdW">
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutorial-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="gOf-TN-6bb">
+                                        <rect key="frame" x="228" y="-32" width="170" height="256"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="170" id="6cL-hT-XW7"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press &quot;+&quot; to describe your problems" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFt-vi-FkD">
+                                        <rect key="frame" x="48" y="210" width="310.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="QFt-vi-FkD" firstAttribute="leading" secondItem="HYK-QB-KdW" secondAttribute="leading" constant="48" id="969-8i-FZu"/>
+                                    <constraint firstItem="QFt-vi-FkD" firstAttribute="top" secondItem="gOf-TN-6bb" secondAttribute="bottom" constant="-14" id="XKa-fF-ptV"/>
+                                    <constraint firstItem="gOf-TN-6bb" firstAttribute="top" secondItem="HYK-QB-KdW" secondAttribute="top" constant="-32" id="aA7-XR-LVw"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QFt-vi-FkD" secondAttribute="trailing" symbolic="YES" id="wVf-e0-ezc"/>
+                                    <constraint firstAttribute="trailing" secondItem="gOf-TN-6bb" secondAttribute="trailing" constant="16" id="yNh-OI-Tsi"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWO-pg-QCJ">
                                 <rect key="frame" x="374" y="104" width="24" height="24"/>
                                 <constraints>
@@ -63,14 +91,18 @@
                             <constraint firstItem="zBB-09-19S" firstAttribute="top" secondItem="gWO-pg-QCJ" secondAttribute="bottom" constant="16" id="3oa-q6-C1t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gWO-pg-QCJ" secondAttribute="trailing" constant="16" id="Bdm-9Z-yWp"/>
                             <constraint firstItem="aDr-pH-P4w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FVa-r8-JAi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HYK-QB-KdW" secondAttribute="bottom" id="G85-Te-Rvy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zBB-09-19S" secondAttribute="bottom" id="JDk-rp-4DC"/>
                             <constraint firstItem="zBB-09-19S" firstAttribute="top" secondItem="aDr-pH-P4w" secondAttribute="bottom" id="O4T-Qx-aQy"/>
                             <constraint firstItem="zBB-09-19S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QdB-Dg-5o4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zBB-09-19S" secondAttribute="trailing" id="Sm9-dZ-Dhh"/>
                             <constraint firstItem="wxN-mx-Hxf" firstAttribute="leading" secondItem="aDr-pH-P4w" secondAttribute="trailing" id="Tq6-wU-Wuf"/>
                             <constraint firstItem="aDr-pH-P4w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="ZAP-ZI-Biv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HYK-QB-KdW" secondAttribute="trailing" id="aFn-s1-RAr"/>
+                            <constraint firstItem="HYK-QB-KdW" firstAttribute="top" secondItem="aDr-pH-P4w" secondAttribute="bottom" id="cJU-dS-smv"/>
                             <constraint firstItem="gWO-pg-QCJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="ghz-hs-eSN"/>
                             <constraint firstItem="wxN-mx-Hxf" firstAttribute="centerY" secondItem="aDr-pH-P4w" secondAttribute="centerY" id="hCi-hm-c1p"/>
+                            <constraint firstItem="HYK-QB-KdW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jb9-c7-E3Y"/>
                             <constraint firstItem="gWO-pg-QCJ" firstAttribute="leading" secondItem="wxN-mx-Hxf" secondAttribute="trailing" constant="16" id="qIE-Sp-Jeb"/>
                             <constraint firstItem="wxN-mx-Hxf" firstAttribute="leading" secondItem="aDr-pH-P4w" secondAttribute="trailing" id="rLg-St-CEO"/>
                         </constraints>
@@ -78,6 +110,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="HYO-AT-Yik"/>
                     <connections>
+                        <outlet property="addTaskButton" destination="gWO-pg-QCJ" id="Wwz-1d-6ea"/>
+                        <outlet property="emptyStateView" destination="HYK-QB-KdW" id="NrE-Zi-lfn"/>
                         <outlet property="tableView" destination="zBB-09-19S" id="FiT-kO-Jwp"/>
                     </connections>
                 </viewController>
@@ -107,5 +141,6 @@
     <resources>
         <image name="plus" width="85" height="85"/>
         <image name="remove" width="85" height="85"/>
+        <image name="tutorial-arrow" width="256" height="256"/>
     </resources>
 </document>

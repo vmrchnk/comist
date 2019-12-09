@@ -15,7 +15,9 @@ class TaskListVC: UIViewController {
     
     //MARK:-> Outlets
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var emptyStateView: UIView!
+    @IBOutlet weak var addTaskButton: UIButton!
+    
     lazy var context = AppDelegate.viwContext
     var fetchedResultsController: NSFetchedResultsController<TaskEntity>?{
         didSet {
@@ -83,7 +85,29 @@ class TaskListVC: UIViewController {
         } catch {
             print("ViewController.loadSaveDate \(error.localizedDescription)")
         }
-//          showEmptyState()
+        showEmptyState()
+    }
+    
+    private func showEmptyState(){
+  print("SHOW EMPTY STATE")
+//          emptyStateView.isHidden = fetchedResultsController?.fetchedObjects?.count ?? 0 > 0 ? true : false
+        
+        if  fetchedResultsController?.fetchedObjects?.count ?? 0 > 0 {
+            UIView.animate(withDuration: 0.4/*Animation Duration second*/, animations: {
+                 self.emptyStateView.alpha = 0
+                self.emptyStateView.frame = CGRect(x: self.emptyStateView.frame.maxX, y: self.emptyStateView.frame.minY, width: self.emptyStateView.bounds.width, height: self.emptyStateView.bounds.height)
+            }, completion:  {
+               (value: Bool) in
+                   self.emptyStateView.isHidden = true
+            })
+        }
+        else {
+            self.emptyStateView.isHidden = false
+            UIView.animate(withDuration: 0.4, animations: {
+                self.emptyStateView.frame = CGRect(x: self.view.frame.minX, y: self.emptyStateView.frame.minY, width: self.emptyStateView.bounds.width, height: self.emptyStateView.bounds.height)
+                     self.emptyStateView.alpha = 1
+                }, completion:  nil)
+        }
     }
     
     
@@ -201,7 +225,7 @@ extension TaskListVC : NSFetchedResultsControllerDelegate {
             
             //todo add animation (tableView.remeItemsAtRow)
             tableView.reloadData()
-//            showEmptyState()
+            showEmptyState()
             
         default:
             break
