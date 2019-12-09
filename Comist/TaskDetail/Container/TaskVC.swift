@@ -181,8 +181,8 @@ class TaskVC: UIViewController {
     
     var isEditModeActive = false {
         didSet {
-            positiveArgView.tableView.isEditing = isEditModeActive
-            negativeArgView.tableView.isEditing = isEditModeActive
+            positiveArgView.tableView.setEditing(isEditModeActive, animated: true)
+            negativeArgView.tableView.setEditing(isEditModeActive, animated: true)
         }
     }
     @IBAction func onDeleteTapped(_ sender: Any) {

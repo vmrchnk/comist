@@ -101,7 +101,16 @@ class TaskListVC: UIViewController {
         }
     }
     
-
+    @IBAction func onDeleteModeOnTapped(_ sender: UIButton) {
+        if tableView.isEditing {
+            tableView.setEditing(false, animated: true)
+            sender.setImage(#imageLiteral(resourceName: "remove"), for: .normal)
+        }else {
+             tableView.setEditing(true, animated: true)
+            sender.setImage(#imageLiteral(resourceName: "remove_selected"), for: .normal)
+        }
+    }
+    
     
     
     private func creatingNewTask(from createTaskV : CreateTaskView){

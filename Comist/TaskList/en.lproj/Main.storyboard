@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMIST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDr-pH-P4w">
-                                <rect key="frame" x="16" y="92" width="358" height="52"/>
+                                <rect key="frame" x="16" y="92" width="318" height="52"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Light" family="Comfortaa" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -46,19 +46,33 @@
                                     <action selector="addTaskTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ief-ed-rEa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxN-mx-Hxf">
+                                <rect key="frame" x="334" y="106" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wxN-mx-Hxf" secondAttribute="height" multiplier="1:1" id="YV4-b2-Q5T"/>
+                                    <constraint firstAttribute="height" constant="24" id="iUh-p7-gOB"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="remove"/>
+                                <connections>
+                                    <action selector="onDeleteModeOnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zkv-t0-Cjp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.3411764705882353" green="0.31764705882352939" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zBB-09-19S" firstAttribute="top" secondItem="gWO-pg-QCJ" secondAttribute="bottom" constant="16" id="3oa-q6-C1t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gWO-pg-QCJ" secondAttribute="trailing" constant="16" id="Bdm-9Z-yWp"/>
+                            <constraint firstItem="aDr-pH-P4w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FVa-r8-JAi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zBB-09-19S" secondAttribute="bottom" id="JDk-rp-4DC"/>
-                            <constraint firstItem="gWO-pg-QCJ" firstAttribute="leading" secondItem="aDr-pH-P4w" secondAttribute="trailing" id="MMU-aH-5r0"/>
                             <constraint firstItem="zBB-09-19S" firstAttribute="top" secondItem="aDr-pH-P4w" secondAttribute="bottom" id="O4T-Qx-aQy"/>
-                            <constraint firstItem="aDr-pH-P4w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="OXU-H7-QyZ"/>
                             <constraint firstItem="zBB-09-19S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QdB-Dg-5o4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zBB-09-19S" secondAttribute="trailing" id="Sm9-dZ-Dhh"/>
+                            <constraint firstItem="wxN-mx-Hxf" firstAttribute="leading" secondItem="aDr-pH-P4w" secondAttribute="trailing" id="Tq6-wU-Wuf"/>
                             <constraint firstItem="aDr-pH-P4w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="ZAP-ZI-Biv"/>
                             <constraint firstItem="gWO-pg-QCJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="ghz-hs-eSN"/>
+                            <constraint firstItem="wxN-mx-Hxf" firstAttribute="centerY" secondItem="aDr-pH-P4w" secondAttribute="centerY" id="hCi-hm-c1p"/>
+                            <constraint firstItem="gWO-pg-QCJ" firstAttribute="leading" secondItem="wxN-mx-Hxf" secondAttribute="trailing" constant="16" id="qIE-Sp-Jeb"/>
+                            <constraint firstItem="wxN-mx-Hxf" firstAttribute="leading" secondItem="aDr-pH-P4w" secondAttribute="trailing" id="rLg-St-CEO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -92,5 +106,6 @@
     </scenes>
     <resources>
         <image name="plus" width="85" height="85"/>
+        <image name="remove" width="85" height="85"/>
     </resources>
 </document>
