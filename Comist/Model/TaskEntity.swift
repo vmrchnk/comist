@@ -11,52 +11,58 @@ import CoreData
 
 class TaskEntity: NSManagedObject {
     
+    static let tag = "class: TaskEntity /"
     
-    static func findOrCreateTask(matching taskModel: TaskModel, in context: NSManagedObjectContext) throws -> TaskEntity{
-        
-        let request: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "timesTemp == %@", taskModel.timestemp)
-        do {
-            let matches = try context.fetch(request)
-            if matches.count > 0 {
-                // assert 'sanity': if condition false ... then print message and interrupt program
-                assert(matches.count == 1, "TaskEntity.findOrCreateTask -- database inconsistency")
-                return matches[0]
-                
+    
+    static func update(new updatedTask: TaskEntity, in context: NSManagedObjectContext){
+        if let oldTask =  getFromDataStore(by: updatedTask.timestamp, with: context){
+            oldTask.title = updatedTask.title
+            oldTask.taskDescription = updatedTask.taskDescription
+            oldTask.state   = updatedTask.state
+            
+            // saving
+            do{
+                _ = try context.save()
+            } catch{
+                print("\(tag) update -> error updating \(error.localizedDescription)")
             }
-        }catch {
-            throw error
+        }else {
+            print("\(tag) update -> task == nil (create new task")
         }
-        // no match, instantiate TaskEntity
-        
-        let task = TaskEntity(context: context)
-        //        task.addToArgument(taskModel.positiveArgs as N)
-        //        task.addToArgument(taskModel.negativeArgs)
-        return task
-        
     }
     
     
-    static func createTask(model: TaskModel, in context: NSManagedObjectContext) {
+    static func getFromDataStore(by timestemp: Int64, with context: NSManagedObjectContext) -> TaskEntity? {
+        let request: NSFetchRequest<TaskEntity> = fetchRequest()
+        request.predicate = NSPredicate(format: "timestamp == %lld", timestemp)
+        do{
+            let task = try context.fetch(request).first
+            return task
+        }catch {
+            print("\(tag) getFromDataStore ->  \(error)")
+        }
+        return nil
+        
+    }
+    
+    static func createTask(title: String, descrpiption: String, type: ComistType = .none, argumentEntity: Set<ArgumentEntity>? = nil, in context: NSManagedObjectContext) -> TaskEntity? {
         
         let taskEntity = TaskEntity(context: context)
-        taskEntity.timestamp = Int64(model.timestemp)
-        taskEntity.title = model.title
-        taskEntity.taskDescription = model.description
-        taskEntity.state = Int16(model.state.rawValue)
+        taskEntity.timestamp = Date().toMillis()
+        taskEntity.title = title
+        taskEntity.taskDescription = descrpiption
+        taskEntity.state = Int16(type.rawValue)
         // task Arguments
-        var args = [ArgumentModel]()
-        args.append(contentsOf: model.negativeArgs)
-        args.append(contentsOf: model.positiveArgs)
-        let argsEntitySet = ArgumentEntity.includeIntoTaskEntity(array: args, in: context)
-        taskEntity.addToArgument(argsEntitySet as NSSet)
-        
-        
+        if let argSet = argumentEntity {
+            taskEntity.addToArgument(argSet as NSSet)
+        }
         do{
             _ = try context.save()
         }catch{
             print("TaskEntity.createTask ->  \(error)")
         }
+        return taskEntity
     }
+    
     
 }

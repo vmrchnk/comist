@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  Comist
+
+  Created by dewill on 03.12.2019.
+  Copyright © 2019 lilcappucc. All rights reserved.
+*/
+
+"positive" = "следует сделать";
+"negative" = "лучше не делать";
+"not specified" = "не решено";
+
+
+"Title" = "Проблема";
+"Description" = "Описание";
+"crate_task_defaultTitle" = "Введите пробему здесь...";
+"create_task_enter_description" = "Введите описание проблемы здесь...";
+"input_error" = "Введите проблему";
+
+/// Task VC
+
+"task_vc_counter" = "ЗА | ПРОТИВ";
+"task_vc_positive" = "За";
+"task_vc_negative" = "Против";
+
+"ad_arg_title" = "Аргумент";
+"ad_arg_value" = "Оценка";
+"ad_arg_title_text" = "Введите аргумент здесь..";
+
+

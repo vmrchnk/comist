@@ -3,7 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIP-z7-Mo6">
-                    <rect key="frame" x="0.0" y="627.33333333333337" width="414" height="268.66666666666663"/>
+                    <rect key="frame" x="0.0" y="582.33333333333337" width="414" height="313.66666666666663"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T17-ow-3F7">
-                            <rect key="frame" x="16" y="24" width="334" height="17"/>
+                            <rect key="frame" x="16" y="24" width="326" height="17"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Medium" family="Comfortaa" pointSize="15"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -50,7 +50,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="enter description here." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lAd-RS-ZoK">
-                            <rect key="frame" x="16" y="113.99999999999999" width="382" height="138.66666666666663"/>
+                            <rect key="frame" x="16" y="113.99999999999999" width="382" height="149.66666666666663"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,14 +58,14 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEf-Nr-DpI">
-                            <rect key="frame" x="366" y="24" width="24" height="24"/>
+                            <rect key="frame" x="358" y="24" width="32" height="32"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="24" id="dkb-G3-5kX"/>
-                                <constraint firstAttribute="height" constant="24" id="mcZ-s9-Y0j"/>
+                                <constraint firstAttribute="width" constant="32" id="dkb-G3-5kX"/>
+                                <constraint firstAttribute="height" constant="32" id="mcZ-s9-Y0j"/>
                             </constraints>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" image="done_ic"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="checked"/>
                             <connections>
                                 <action selector="pressedCreatingTaskButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="oBx-kD-Fga"/>
                             </connections>
@@ -78,7 +78,7 @@
                         <constraint firstItem="p9Y-yG-aRm" firstAttribute="top" secondItem="T17-ow-3F7" secondAttribute="bottom" constant="8" id="QUt-9c-zhL"/>
                         <constraint firstItem="p9Y-yG-aRm" firstAttribute="leading" secondItem="fIP-z7-Mo6" secondAttribute="leading" constant="16" id="QZY-Oq-dFp"/>
                         <constraint firstAttribute="trailing" secondItem="KEf-Nr-DpI" secondAttribute="trailing" constant="24" id="SdG-aR-AJo"/>
-                        <constraint firstAttribute="bottom" secondItem="lAd-RS-ZoK" secondAttribute="bottom" constant="16" id="Vfs-hG-4Jo"/>
+                        <constraint firstAttribute="bottom" secondItem="lAd-RS-ZoK" secondAttribute="bottom" constant="50" id="Vfs-hG-4Jo"/>
                         <constraint firstItem="KEf-Nr-DpI" firstAttribute="leading" secondItem="T17-ow-3F7" secondAttribute="trailing" constant="16" id="Y5o-ae-jed"/>
                         <constraint firstItem="T17-ow-3F7" firstAttribute="leading" secondItem="fIP-z7-Mo6" secondAttribute="leading" constant="16" id="Zk3-vZ-tXm"/>
                         <constraint firstItem="lAd-RS-ZoK" firstAttribute="top" secondItem="Xd3-72-bYF" secondAttribute="bottom" constant="8" id="awv-sU-UHx"/>
@@ -114,7 +114,7 @@
             <constraints>
                 <constraint firstItem="fIP-z7-Mo6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5EA-tC-uuj"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YIb-kP-Bcv" secondAttribute="trailing" id="AFy-wW-qWb"/>
-                <constraint firstItem="fIP-z7-Mo6" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.3" id="Fd6-Bo-brQ"/>
+                <constraint firstItem="fIP-z7-Mo6" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.35" id="Fd6-Bo-brQ"/>
                 <constraint firstItem="YIb-kP-Bcv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HjL-4y-nFS"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fIP-z7-Mo6" secondAttribute="trailing" id="Smg-u7-fuw"/>
                 <constraint firstAttribute="bottom" secondItem="fIP-z7-Mo6" secondAttribute="bottom" id="vIC-m2-Pj9"/>
@@ -123,15 +123,18 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="createTaskButton" destination="KEf-Nr-DpI" id="Bf4-ex-MfW"/>
-                <outlet property="descriptionTextView" destination="lAd-RS-ZoK" id="bCm-mL-X1p"/>
+                <outlet property="descriptionLabel" destination="Xd3-72-bYF" id="haU-ie-Qex"/>
+                <outlet property="descriptionTextView" destination="lAd-RS-ZoK" id="rSC-mC-tbR"/>
                 <outlet property="errorView" destination="YIb-kP-Bcv" id="5Wh-Gi-GF6"/>
+                <outlet property="errorViewLabel" destination="86o-xW-D6h" id="116-JR-MdB"/>
                 <outlet property="taskView" destination="fIP-z7-Mo6" id="WcN-6Z-Tli"/>
-                <outlet property="titleLable" destination="p9Y-yG-aRm" id="nbH-LX-g1y"/>
+                <outlet property="titleLabel" destination="T17-ow-3F7" id="nlq-4E-qrQ"/>
+                <outlet property="titleTextField" destination="p9Y-yG-aRm" id="nbH-LX-g1y"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="144.64285714285714"/>
         </view>
     </objects>
     <resources>
-        <image name="done_ic" width="553" height="553"/>
+        <image name="checked" width="85.333335876464844" height="85.333335876464844"/>
     </resources>
 </document>

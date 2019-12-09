@@ -11,25 +11,25 @@ import CoreData
 
 class ArgumentEntity: NSManagedObject {
     
-    static func createArgEntity(from model: ArgumentModel, in context: NSManagedObjectContext) -> ArgumentEntity {
+    static func createArgEntity(type: ComistType, text:String, value: Int, in context: NSManagedObjectContext) -> ArgumentEntity {
         
         let arg = ArgumentEntity(context: context)
-        arg.timestamp = Int64(model.timestamp)
-        arg.text = model.text
-        arg.type =  Int16(model.type.rawValue)
-        arg.value = Int64(model.value.rawValue)
+        arg.timestamp = Date().toMillis()
+        arg.text = text
+        arg.type =  Int16(type.rawValue)
+        arg.value = Int64(value)
         
         return arg
     }
-    
-    
-    static func includeIntoTaskEntity(array: [ArgumentModel], in context: NSManagedObjectContext) -> Set<ArgumentEntity> {
-        var argsSet = Set<ArgumentEntity>()
-        for argsModel in array {
-            argsSet.insert(createArgEntity(from: argsModel, in: context) )
-        }
-        return argsSet
-    }
+//    
+//    
+//    static func includeIntoTaskEntity(array: [ArgumentModel], in context: NSManagedObjectContext) -> Set<ArgumentEntity> {
+//        var argsSet = Set<ArgumentEntity>()
+//        for argsModel in array {
+//            argsSet.insert(createArgEntity(from: argsModel, in: context) )
+//        }
+//        return argsSet
+//    }
     
     
     

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Medium.ttf">
+            <string>Comfortaa-Medium</string>
+        </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddArgumentView" customModule="Comist" customModuleProvider="target">
+            <connections>
+                <outlet property="addArguemntFormView" destination="7SH-8f-iKE" id="0IQ-59-fYt"/>
+                <outlet property="argumentTextField" destination="prd-OJ-Bbv" id="tio-kJ-kYU"/>
+                <outlet property="backgroundView" destination="H6t-2M-rrM" id="uaM-TJ-QLp"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Smn-Ha-ANL"/>
+                <outlet property="titleLabel" destination="DAr-QZ-D9S" id="EWK-lB-bhR"/>
+                <outlet property="valueLabel" destination="Qto-EA-fiV" id="uOb-Ma-n22"/>
+                <outlet property="valuePicker" destination="vrt-En-ZRk" id="hcG-Dw-xeb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7SH-8f-iKE">
+                    <rect key="frame" x="0.0" y="627" width="414" height="269"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Argument" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAr-QZ-D9S">
+                            <rect key="frame" x="16" y="24" width="334" height="17"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Medium" family="Comfortaa" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="prd-OJ-Bbv">
+                            <rect key="frame" x="16" y="57" width="382" height="23"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Medium" family="Comfortaa" pointSize="20"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="onAddArgumetFieldClicked:" destination="-1" eventType="touchDown" id="7TG-6d-DqV"/>
+                            </connections>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qto-EA-fiV">
+                            <rect key="frame" x="16" y="88" width="382" height="17"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByH-pn-3aQ">
+                            <rect key="frame" x="366" y="24" width="24" height="24"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="dwY-MH-AVG"/>
+                                <constraint firstAttribute="height" constant="24" id="iRP-Ct-fOd"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="checked-white"/>
+                            <connections>
+                                <action selector="savingArgument:" destination="-1" eventType="touchUpInside" id="IgI-pJ-ZF4"/>
+                            </connections>
+                        </button>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrt-En-ZRk">
+                            <rect key="frame" x="8" y="105" width="398" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="fbN-MM-7Ii"/>
+                            </constraints>
+                        </pickerView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.14151985321182564" green="0.54810437817258884" blue="0.2467944734067119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="ByH-pn-3aQ" firstAttribute="top" secondItem="7SH-8f-iKE" secondAttribute="top" constant="24" id="8vU-jx-JbV"/>
+                        <constraint firstItem="ByH-pn-3aQ" firstAttribute="leading" secondItem="DAr-QZ-D9S" secondAttribute="trailing" constant="16" id="Ecc-Hc-NuD"/>
+                        <constraint firstItem="prd-OJ-Bbv" firstAttribute="leading" secondItem="7SH-8f-iKE" secondAttribute="leading" constant="16" id="Eqj-wE-jgD"/>
+                        <constraint firstItem="DAr-QZ-D9S" firstAttribute="leading" secondItem="7SH-8f-iKE" secondAttribute="leading" constant="16" id="IB6-NV-3e6"/>
+                        <constraint firstItem="DAr-QZ-D9S" firstAttribute="top" secondItem="7SH-8f-iKE" secondAttribute="top" constant="24" id="IuM-Vi-XlH"/>
+                        <constraint firstItem="vrt-En-ZRk" firstAttribute="top" secondItem="Qto-EA-fiV" secondAttribute="bottom" id="KC6-2w-2ok"/>
+                        <constraint firstItem="prd-OJ-Bbv" firstAttribute="top" secondItem="DAr-QZ-D9S" secondAttribute="bottom" constant="16" id="NSm-sx-aEy"/>
+                        <constraint firstAttribute="trailing" secondItem="ByH-pn-3aQ" secondAttribute="trailing" constant="24" id="VcD-x5-P1h"/>
+                        <constraint firstItem="vrt-En-ZRk" firstAttribute="top" secondItem="Qto-EA-fiV" secondAttribute="bottom" id="a0P-Cv-SUT"/>
+                        <constraint firstAttribute="trailing" secondItem="Qto-EA-fiV" secondAttribute="trailing" constant="16" id="aWd-Nx-HMm"/>
+                        <constraint firstItem="Qto-EA-fiV" firstAttribute="leading" secondItem="7SH-8f-iKE" secondAttribute="leading" constant="16" id="bMq-gx-Fg3"/>
+                        <constraint firstAttribute="trailing" secondItem="prd-OJ-Bbv" secondAttribute="trailing" constant="16" id="mPf-3N-LfQ"/>
+                        <constraint firstItem="Qto-EA-fiV" firstAttribute="top" secondItem="prd-OJ-Bbv" secondAttribute="bottom" constant="8" id="sAt-xw-ebO"/>
+                        <constraint firstItem="vrt-En-ZRk" firstAttribute="leading" secondItem="7SH-8f-iKE" secondAttribute="leading" constant="8" id="vJd-xn-2h7"/>
+                        <constraint firstAttribute="trailing" secondItem="vrt-En-ZRk" secondAttribute="trailing" constant="8" id="xgo-kW-Kx1"/>
+                    </constraints>
+                </view>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6t-2M-rrM">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="7SH-8f-iKE" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ArS-Gw-kgo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="H6t-2M-rrM" secondAttribute="trailing" id="CfR-4n-ygC"/>
+                <constraint firstItem="H6t-2M-rrM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZAm-I8-KR8"/>
+                <constraint firstItem="7SH-8f-iKE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="a3U-vm-ex1"/>
+                <constraint firstAttribute="bottom" secondItem="7SH-8f-iKE" secondAttribute="bottom" id="c88-wO-AsI"/>
+                <constraint firstItem="H6t-2M-rrM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gy9-Oi-Rfg"/>
+                <constraint firstItem="7SH-8f-iKE" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.3" id="kxq-1m-07l"/>
+                <constraint firstAttribute="bottom" secondItem="H6t-2M-rrM" secondAttribute="bottom" id="v1c-th-ayj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="103"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="checked-white" width="85" height="85"/>
+    </resources>
+</document>

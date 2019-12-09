@@ -13,10 +13,17 @@ class CreateTaskView: UIView {
     var taskCreated: ((String, String) -> Void)?
     
     @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorViewLabel: UILabel!
+    
+
     @IBOutlet weak var taskView: UIView!
     @IBOutlet weak var createTaskButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var titleLable: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
+    private let defaultTitle = NSLocalizedString("crate_task_defaultTitle", comment: "")
+    private let defaultDescription = NSLocalizedString("create_task_enter_description", comment: "")
     
     static let XIB_NAME = "CreateTaskView"
     
@@ -24,12 +31,15 @@ class CreateTaskView: UIView {
     private var isKeyboardShowing = false
     
     
+    
+    //MARK: -> standart method
     override func awakeFromNib() {
         super.awakeFromNib()
         descriptionTextView.delegate = self
         taskView.layer.cornerRadius = 15
         self.taskView.frame = CGRect(x: 0, y: self.frame.maxY  , width: self.taskView.frame.width, height: self.taskView.frame.height)
         startAnimation(for: taskView, relativeTo: self.frame.maxY - self.taskView.frame.height)
+        setLocalizedText()
     }
     
     override init(frame: CGRect) {
@@ -39,8 +49,16 @@ class CreateTaskView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         registrateNotificationCenterObserver()
-        
-}
+    }
+    
+    private func setLocalizedText(){
+        errorViewLabel.text = NSLocalizedString("input_error", comment: "eror, when title = nil")
+        titleTextField.text = NSLocalizedString("Title", comment: "")
+        descriptionLabel.text = NSLocalizedString("Description", comment: "")
+        descriptionTextView.text = defaultDescription
+        titleTextField.text = defaultTitle
+        titleLabel.text = NSLocalizedString("Title", comment: "")
+    }
     
     private func registrateNotificationCenterObserver(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(closeView(_:)))
@@ -61,15 +79,6 @@ class CreateTaskView: UIView {
         self.removeFromSuperview()
     }
     
-    @IBAction func pressedCreatingTaskButton(_ sender: Any) {
-        errorView.isHidden  = false
-        errorView.frame = CGRect(x: 0, y: -self.errorView.frame.height, width: self.errorView.frame.width, height: self.errorView.frame.height)
-        if titleLable.text == "" || titleLable.text  == defaultTitle {
-            validateBeforeCreating()
-        } else {
-            taskCreated?.self(titleLable.text!, descriptionTextView.text)}
-        
-    }
     
     private func validateBeforeCreating(){
         startAnimation(for: errorView, relativeTo: 0)
@@ -78,42 +87,58 @@ class CreateTaskView: UIView {
             self.startAnimation(for: self.errorView, relativeTo: -self.errorView.frame.height, completion: {_ in self.errorView.isHidden = true})
         }
     }
-        
-        @objc func keyBoardWillShow(notification: NSNotification) {
-            guard !isKeyboardShowing else { return }
-            if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-                isKeyboardShowing = true
-                let keyboardRectangle = keyboardFrame.cgRectValue
-                let keyboardHeight = keyboardRectangle.height
-                print(  self.taskView.frame.maxY)
-                startAnimation(for: taskView, relativeTo: self.taskView.frame.minY - keyboardHeight + 20)
-            }
+    
+    @objc func keyBoardWillShow(notification: NSNotification) {
+        guard !isKeyboardShowing else { return }
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            isKeyboardShowing = true
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            print(  self.taskView.frame.maxY)
+            startAnimation(for: taskView, relativeTo: self.taskView.frame.minY - keyboardHeight + 40)
         }
-        
-        
-        private func startAnimation(for view: UIView, relativeTo y: CGFloat, completion: ((Bool) -> Void)? = nil){
-            UIView.animate(withDuration: animationDuration, animations: {
-                view.frame = CGRect(x: 0, y: y, width: view.frame.width, height: view.frame.height)
-            }, completion: completion)
-        }
-        
-        
-        private let defaultTitle = "enter title here."
-        @IBAction func inputtigTaskTitle(_ sender: UITextField) {
-            if sender.text == defaultTitle {
-                sender.text = ""
-            }
-        }
-        
     }
     
     
-    extension CreateTaskView: UITextViewDelegate {
-        func textViewDidBeginEditing(_ textView: UITextView) {
-            textView.tintColor = .black
-            if textView.text == "enter description here." {
-                textView.text = ""
+    private func startAnimation(for view: UIView, relativeTo y: CGFloat, completion: ((Bool) -> Void)? = nil){
+        UIView.animate(withDuration: animationDuration, animations: {
+            view.frame = CGRect(x: 0, y: y, width: view.frame.width, height: view.frame.height)
+        }, completion: completion)
+    }
+    
+    
+    //MARK: -> Actions
+    @IBAction func pressedCreatingTaskButton(_ sender: Any) {
+        errorView.isHidden  = false
+        errorView.frame = CGRect(x: 0, y: -self.errorView.frame.height, width: self.errorView.frame.width, height: self.errorView.frame.height)
+        if titleTextField.text == "" || titleTextField.text  == defaultTitle {
+            validateBeforeCreating()
+        } else {
+            if descriptionTextView.text == defaultDescription {
+                descriptionTextView.text = ""
             }
+            taskCreated?.self(titleTextField.text!, descriptionTextView.text)
+            self.endEditing(true)
+            self.removeFromSuperview()
         }
+    }
+    
+    @IBAction func inputtigTaskTitle(_ sender: UITextField) {
+        if sender.text == defaultTitle {
+            sender.text = ""
+        }
+    }
+    
+}
+
+
+//MARK:-> UITextViewDelegate
+extension CreateTaskView: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.tintColor = .black
+        if textView.text == defaultDescription {
+            textView.text = ""
+        }
+    }
 }
 

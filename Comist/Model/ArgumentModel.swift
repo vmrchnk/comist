@@ -8,23 +8,32 @@
 
 import Foundation
 
-struct ArgumentModel: Hashable {
-    let timestamp: Int64
-    let text: String
-    let value: ArgumentValue
-    let type: ArgumentType
-    
-    
-    init(text: String, value: ArgumentValue, type: ArgumentType){
-        self.timestamp = Date().toMillis()
-        self.text = text
-        self.value = value
-        self.type = type
-    }
-}
+//struct ArgumentModel: Hashable {
+//    let timestamp: Int64
+//    let text: String
+//    let value: ArgumentValue
+//    let type: ArgumentType
+//
+//
+//    init(text: String, value: ArgumentValue, type: ArgumentType){
+//        self.timestamp = Date().toMillis()
+//        self.text = text
+//        self.value = value
+//        self.type = type
+//    }
+//}
 
-enum ArgumentType: Int {
-    case none = 0, possitive, negative
+//using for task ang args
+enum ComistType: Int {
+    case none = 0, positive, negative
+    
+    func getTitle() -> String {
+        switch self {
+        case .negative: return NSLocalizedString("negative", comment: "")
+        case .positive: return NSLocalizedString("positive",  comment: "")
+        case .none: return NSLocalizedString("not specified",  comment: "")
+        }
+    }
 }
 
 enum ArgumentValue: Int {
