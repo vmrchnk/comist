@@ -37,6 +37,7 @@ class CreateTaskView: UIView {
         super.awakeFromNib()
         descriptionTextView.delegate = self
         taskView.layer.cornerRadius = 15
+        taskView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         self.taskView.frame = CGRect(x: 0, y: self.frame.maxY  , width: self.taskView.frame.width, height: self.taskView.frame.height)
         startAnimation(for: taskView, relativeTo: self.frame.maxY - self.taskView.frame.height)
         setLocalizedText()
@@ -51,6 +52,8 @@ class CreateTaskView: UIView {
         registrateNotificationCenterObserver()
     }
     
+    
+//MARK:-> Localize
     private func setLocalizedText(){
         errorViewLabel.text = NSLocalizedString("input_error", comment: "eror, when title = nil")
         titleTextField.text = NSLocalizedString("Title", comment: "")

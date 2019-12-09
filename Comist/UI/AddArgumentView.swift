@@ -56,6 +56,7 @@ class AddArgumentView: UIView {
         registrateNotificationCenterObserver()
         contentView.backgroundColor  = UIColor.black.withAlphaComponent(0.3)
         addArguemntFormView.layer.cornerRadius = 15
+        addArguemntFormView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         if argumentTextField.text == "" {  argumentTextField.text = defaultInputFieldTitle }
         setupLocalizedText()
         //animation
