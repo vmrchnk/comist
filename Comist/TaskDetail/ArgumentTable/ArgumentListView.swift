@@ -52,8 +52,9 @@ class ArgumentListView: UIView {
     
     
     func setupBackgroundImage(_ image: UIImage, with color: UIColor = .clear){
-        backgroundImageView.image = image.image(alpha: 0.2)
+        backgroundImageView.image = image
         backgroundImageView.backgroundColor = color
+        backgroundImageView.alpha = 0.2
     }
     
     // method for setting up all view's property from another class
