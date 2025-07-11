@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,11 +40,23 @@
 		6FCDA5802378371000C1B974 /* TaskEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCDA57F2378371000C1B974 /* TaskEntity.swift */; };
 		6FCDA5822378373900C1B974 /* ArgumentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCDA5812378373900C1B974 /* ArgumentEntity.swift */; };
 		6FD0A6A42397F861000F842F /* empty-state.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FD0A6A32397F861000F842F /* empty-state.json */; };
-		E68381C133A68DA2AD5AD722 /* Pods_Comist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3434759966F929116727252 /* Pods_Comist.framework */; };
+		E0A85BD32E2109EA005CE67F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E0A85BD22E2109EA005CE67F /* Lottie */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E0A85BD72E210A43005CE67F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		6A21901AC224A45E5382A966 /* Pods-Comist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comist.debug.xcconfig"; path = "Target Support Files/Pods-Comist/Pods-Comist.debug.xcconfig"; sourceTree = "<group>"; };
 		6F29FBAE2382F9C1002D3368 /* ArgumentListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArgumentListView.xib; sourceTree = "<group>"; };
 		6F29FBB02382FA40002D3368 /* ArgumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentListView.swift; sourceTree = "<group>"; };
 		6F3071C0238AD9B600F60B61 /* ArgumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,7 +97,6 @@
 		6FCDA5812378373900C1B974 /* ArgumentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentEntity.swift; sourceTree = "<group>"; };
 		6FD0A6A32397F861000F842F /* empty-state.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "empty-state.json"; sourceTree = "<group>"; };
 		B3434759966F929116727252 /* Pods_Comist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF513A77B69A4FD40FC9E4D6 /* Pods-Comist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comist.release.xcconfig"; path = "Target Support Files/Pods-Comist/Pods-Comist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,28 +104,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E68381C133A68DA2AD5AD722 /* Pods_Comist.framework in Frameworks */,
+				E0A85BD32E2109EA005CE67F /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		63B63745824337CD2A905C25 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6A21901AC224A45E5382A966 /* Pods-Comist.debug.xcconfig */,
-				FF513A77B69A4FD40FC9E4D6 /* Pods-Comist.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		6F4F718B2368B0B30056DAE8 = {
 			isa = PBXGroup;
 			children = (
 				6F4F71962368B0B30056DAE8 /* Comist */,
 				6F4F71952368B0B30056DAE8 /* Products */,
-				63B63745824337CD2A905C25 /* Pods */,
 				A44E05838FA1B587805DC7AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -287,11 +288,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F4F71AB2368B0B90056DAE8 /* Build configuration list for PBXNativeTarget "Comist" */;
 			buildPhases = (
-				463BFDB680028A59A8A36841 /* [CP] Check Pods Manifest.lock */,
 				6F4F71902368B0B30056DAE8 /* Sources */,
 				6F4F71912368B0B30056DAE8 /* Frameworks */,
 				6F4F71922368B0B30056DAE8 /* Resources */,
-				C596FEED9F8B12DB23DB5C32 /* [CP] Embed Pods Frameworks */,
+				E0A85BD72E210A43005CE67F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -327,6 +327,9 @@
 				ru,
 			);
 			mainGroup = 6F4F718B2368B0B30056DAE8;
+			packageReferences = (
+				E0A85BD12E2109EA005CE67F /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 6F4F71952368B0B30056DAE8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -361,48 +364,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		463BFDB680028A59A8A36841 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Comist-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C596FEED9F8B12DB23DB5C32 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Comist/Pods-Comist-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Comist/Pods-Comist-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Comist/Pods-Comist-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6F4F71902368B0B30056DAE8 /* Sources */ = {
@@ -581,14 +542,13 @@
 		};
 		6F4F71AC2368B0B90056DAE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A21901AC224A45E5382A966 /* Pods-Comist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = Y7693M9CNF;
 				INFOPLIST_FILE = Comist/Support/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,14 +562,13 @@
 		};
 		6F4F71AD2368B0B90056DAE8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF513A77B69A4FD40FC9E4D6 /* Pods-Comist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = Y7693M9CNF;
 				INFOPLIST_FILE = Comist/Support/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -643,6 +602,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E0A85BD12E2109EA005CE67F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E0A85BD22E2109EA005CE67F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0A85BD12E2109EA005CE67F /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6F4F71A02368B0B30056DAE8 /* Comist.xcdatamodeld */ = {
